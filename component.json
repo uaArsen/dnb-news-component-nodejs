@@ -12,7 +12,7 @@
       }
     }
   },
-  "triggers": {
+  "triggers: {
     "getPetsByStatusWithGenerators": {
       "main": "./lib/triggers/getPetsByStatusWithGenerators.js",
       "type": "polling",
