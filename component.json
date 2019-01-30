@@ -1,5 +1,5 @@
 {
-  "title": "Petstore API (Node.js) for_comp_pusher_test6",
+  "title": "Petstore API (Node.js)",
   "description": "elastic.io component for the Petstore API",
   "docsUrl": "https://github.com/elasticio/petstore-component-nodejs",
   "credentials": {
@@ -12,7 +12,7 @@
       }
     }
   },
-  "triggers:" {
+  "triggers": {
     "getPetsByStatusWithGenerators": {
       "main": "./lib/triggers/getPetsByStatusWithGenerators.js",
       "type": "polling",
