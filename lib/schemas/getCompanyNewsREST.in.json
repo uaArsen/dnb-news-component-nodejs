@@ -1,0 +1,7 @@
+{
+  "name": {
+    "type": "string",
+    "required": true,
+    "title": "Request"
+  }
+}
