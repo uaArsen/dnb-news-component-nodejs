@@ -13,7 +13,7 @@
       "password": {
         "label": "DNB API Password",
         "required": true,
-        "viewClass": "PasswordView",
+        "viewClass": "TextFieldWithNoteView",
         "note": "Obtain your password at: https://docs.dnb.com"
       }
     }
