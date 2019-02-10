@@ -14,21 +14,28 @@ module.exports = verify;
 function verify(credentials) {
 
     // access the value of the apiKey field defined in credentials section of component.json
-    const apiKey = credentials.apiKey;
+    const username = credentials.username;
+    const password = credentials.password;
 
-    if (!apiKey) {
-        throw new Error('API key is missing');
+    if (!username ) {
+        throw new Error('DNB Username is missing');
     }
+
+    if (!password ) {
+        throw new Error('DNB Password is missing');
+    }
+
 
     // sending a request to the most simple endpoint of the target API
     const requestOptions = {
-        uri: 'https://petstore.elastic.io/v2/user/me',
+        uri: 'https://direct.dnb.com/Authentication/V2.0/',
         headers: {
-            'api-key': apiKey
+            'x-dnb-user': username,
+            'x-dnb-pwd': password
         },
         json: true
     };
 
     // if the request succeeds, we can assume the api key is valid
-    return request.get(requestOptions);
+    return request.post(requestOptions);
 }

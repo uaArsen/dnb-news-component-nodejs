@@ -1,93 +1,30 @@
 {
-  "title": "Petstore API (Node.js)",
-  "description": "elastic.io component for the Petstore API",
-  "docsUrl": "https://github.com/elasticio/petstore-component-nodejs",
+  "title": "DNB API (Node.js)",
+  "description": "elastic.io component for the DNB API",
+  "docsUrl": "https://github.com/elasticio/dnb-component-nodejs",
   "credentials": {
     "fields": {
-      "apiKey": {
-        "label": "API key",
+      "username": {
+        "label": "DNB API Username",
         "required": true,
         "viewClass": "TextFieldWithNoteView",
-        "note": "Please use <b>elasticio</b> as API key. For more details see <a href='https://petstore.elastic.io/docs/' target='_blank'>Petstore API docs</a>."
-      }
-    }
-  },
-  "triggers": {
-    "getPetsByStatusWithGenerators": {
-      "main": "./lib/triggers/getPetsByStatusWithGenerators.js",
-      "type": "polling",
-      "title": "Get Pets By Status With Generators",
-      "fields": {
-        "status": {
-          "label": "Pet Status",
-          "required": true,
-          "viewClass": "SelectView",
-          "model": {
-            "available": "Available",
-            "pending": "Pending",
-            "sold": "Sold"
-          },
-          "prompt": "Select Pet Status"
-        }
+        "note": "Obtain your username at: https://docs.dnb.com"
       },
-      "metadata": {
-        "out": "./lib/schemas/getPetsByStatus.out.json"
-      }
-    },
-    "getPetsByStatusWithPromises": {
-      "main": "./lib/triggers/getPetsByStatusWithPromises.js",
-      "type": "polling",
-      "title": "Get Pets By Status With Promises",
-      "fields": {
-        "status": {
-          "label": "Pet Status",
-          "required": true,
-          "viewClass": "SelectView",
-          "model": {
-            "available": "Available",
-            "pending": "Pending",
-            "sold": "Sold"
-          },
-          "prompt": "Select Pet Status"
-        }
-      },
-      "metadata": {
-        "out": "./lib/schemas/getPetsByStatus.out.json"
-      }
-    },
-    "getPetsByStatusWithDynamicSelectModel": {
-      "main": "./lib/triggers/getPetsByStatusWithDynamicSelectModel.js",
-      "type": "polling",
-      "title": "Get Pets By Status With Dynamic Select Model",
-      "fields": {
-        "status": {
-          "label": "Pet Status",
-          "required": true,
-          "viewClass": "SelectView",
-          "model": "getStatusModel",
-          "prompt": "Select Pet Status"
-        }
-      },
-      "metadata": {
-        "out": "./lib/schemas/getPetsByStatus.out.json"
+      "password": {
+        "label": "DNB API Password",
+        "required": true,
+        "viewClass": "PasswordView",
+        "note": "Obtain your password at: https://docs.dnb.com"
       }
     }
   },
   "actions": {
-    "createPetWithPromise": {
-      "main": "./lib/actions/createPetWithPromise.js",
-      "title": "Create a Pet With Promise",
+    "getCompanyNewsREST": {
+      "main": "./lib/actions/getCompanyNewsREST.js",
+      "title": "Get Company News From DNB",
       "metadata": {
-        "in": "./lib/schemas/createPet.in.json",
-        "out": "./lib/schemas/createPet.out.json"
-      }
-    },
-    "createPetWithGenerators": {
-      "main": "./lib/actions/createPetWithGenerators.js",
-      "title": "Create a Pet With Generators",
-      "metadata": {
-        "in": "./lib/schemas/createPet.in.json",
-        "out": "./lib/schemas/createPet.out.json"
+        "in": "./lib/schemas/getCompanyNewsREST.in.json",
+        "out": "./lib/schemas/getCompanyNewsREST.out.json"
       }
     }
   }
