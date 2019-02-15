@@ -36,6 +36,14 @@ function verify(credentials) {
         json: true
     };
 
+    let response  = request.post(requestOptions).then(
+        function (parsedBody) {
+            credentials.auth_token = parsedBody.token;
+            credentials.obtain_datetime = new Date();
+        }
+    );
+
+
     // if the request succeeds, we can assume the api key is valid
-    return request.post(requestOptions);
+    return
 }
