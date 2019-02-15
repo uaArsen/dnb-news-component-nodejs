@@ -1,7 +1,100 @@
 {
-  "name": {
-    "type": "string",
-    "required": true,
-    "title": "Request"
+  "type": "object",
+  "required": true,
+  "properties": {
+    "DUNS": {
+      "type": "string",
+      "required": true,
+      "title": "DUNS"
+    },
+    "productID": {
+      "type": "string",
+      "required": true,
+      "title": "productID"
+    },
+    "version": {
+      "type": "string",
+      "required": false,
+      "title": "version",
+      "default": "v3.0"
+    },
+    "ApplicationTransactionID": {
+      "type": "string",
+      "required": false,
+      "title": "ApplicationTransactionID"
+    },
+    "TransactionTimestamp": {
+      "type": "string",
+      "required": false,
+      "title": "TransactionTimestamp"
+    },
+    "SubmittingOfficeID": {
+      "type": "string",
+      "required": false,
+      "title": "SubmittingOfficeID"
+    },
+    "TradeUpIndicator": {
+      "type": "boolean",
+      "required": false,
+      "title": "TradeUpIndicator"
+    },
+    "PublishedFromDate": {
+      "type": "date",
+      "required": false,
+      "title": "PublishedFromDate"
+    },
+    "PublishedToDate": {
+      "type": "date",
+      "required": false,
+      "title": "PublishedToDate"
+    },
+    "NewsCategoryTexts": {
+      "type": "array",
+      "required": false,
+      "properties": {
+        "NewsCategoryText": {
+          "type": "string",
+          "required": false,
+          "title": "NewsCategoryText"
+        }
+      }
+    },
+    "SocialMediaPlatformNames": {
+      "type": "array",
+      "required": false,
+      "properties": {
+        "SocialMediaPlatformName": {
+          "type": "string",
+          "required": false,
+          "title": "SocialMediaPlatformName"
+        }
+      }
+    },
+    "ArchiveProductOptOutIndicator": {
+      "type": "boolean",
+      "required": false,
+      "title": "ArchiveProductOptOutIndicator"
+    },
+    "PortfolioAssetContainerID": {
+      "type": "long",
+      "required": false,
+      "title": "PortfolioAssetContainerID"
+    },
+    "CustomerReferenceTexts": {
+      "type": "array",
+      "required": false,
+      "properties": {
+        "CustomerReferenceText": {
+          "type": "string",
+          "required": false,
+          "title": "CustomerReferenceText"
+        }
+      }
+    },
+    "CustomerBillingEndorsementText": {
+      "type": "string",
+      "required": false,
+      "title": "CustomerBillingEndorsementText"
+    }
   }
 }

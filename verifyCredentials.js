@@ -17,11 +17,11 @@ function verify(credentials) {
     const username = credentials.username;
     const password = credentials.password;
 
-    if (!username ) {
+    if (!username) {
         throw new Error('DNB Username is missing');
     }
 
-    if (!password ) {
+    if (!password) {
         throw new Error('DNB Password is missing');
     }
 
@@ -32,18 +32,18 @@ function verify(credentials) {
         headers: {
             'x-dnb-user': username,
             'x-dnb-pwd': password
-        },
-        json: true
+        }
     };
 
-    let response  = request.post(requestOptions).then(
+    // if the request succeeds, we can assume the api key is valid
+    return request.post(requestOptions).then(
         function (parsedBody) {
-            credentials.auth_token = parsedBody.token;
+            let token = parsedBody.AuthenticationDetail.Token;
+            if (!token) {
+                throw new Error('Failed to obtain token, response from dnb: ' + parsedBody.toString());
+            }
+            credentials.token = token;
             credentials.obtain_datetime = new Date();
         }
-    );
-
-
-    // if the request succeeds, we can assume the api key is valid
-    return
+    )
 }
